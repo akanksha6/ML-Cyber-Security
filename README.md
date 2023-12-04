@@ -1,12 +1,12 @@
 # ML-Cyber-Security
 
-# Data
+## Data
 
 Validation Data: bd_valid.h5 and valid.h5
 
 Test Data: bd_test.h5 and test.h5
 
-# Evaluating the Backdoored Model
+## Evaluating the Backdoored Model
 
 The DNN architecture used to train the face recognition model is the state-of-the-art DeepID network. This DNN is backdoored with multiple triggers. Each trigger is associated with its own target label.
 
@@ -17,15 +17,15 @@ E.g., python3 eval.py data/clean_validation_data.h5  models/sunglasses_bd_net.h5
 
 I could not upload data here as it is huge.
 
-# The accuracy on clean test data 
+## The accuracy on clean test data 
 
 Clean Classification accuracy: 98.64899974019225
 
-# The attack success rate (on backdoored test data) as a function of the fraction of channels pruned.
+## The attack success rate as a function of the fraction of channels pruned
 
 ![output](https://github.com/akanksha6/ML-Cyber-Security/assets/26012142/5a995881-40bd-4b52-916a-c3fb8cf6bb12)
 
-# Performance of repaired networks
+## Performance of repaired networks
 
 Your repaired networks are created by pruning the max pool layer and save the model when the accuracy drops.
 
@@ -37,7 +37,7 @@ repaired_25%	64.232268	  99.992206
 
 ![repaired_model](https://github.com/akanksha6/ML-Cyber-Security/assets/26012142/e909cbd8-16d3-41e1-aeed-7e7e828fee5b)
 
-# Performance of Goodnet (combined) model
+## Performance of Goodnet (combined) model
 
 We combine the repaired models with the bd model and evaluate the new models
 
