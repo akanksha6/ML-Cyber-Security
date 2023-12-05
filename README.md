@@ -5,13 +5,13 @@ Name: Akanksha Dhote
 NetID: avd8874
 
 
-## Data
+### Data
 
 Validation Data: bd_valid.h5 and valid.h5
 
 Test Data: bd_test.h5 and test.h5
 
-## Evaluating the Backdoored Model
+### Evaluating the Backdoored Model
 
 The DNN architecture used to train the face recognition model is the state-of-the-art DeepID network. This DNN is backdoored with multiple triggers. Each trigger is associated with its own target label.
 
@@ -22,11 +22,11 @@ E.g., python3 eval.py data/clean_validation_data.h5  models/sunglasses_bd_net.h5
 
 I could not upload data here as it is huge.
 
-## The accuracy on clean test data 
+### The accuracy on clean test data 
 
 Clean Classification accuracy: 98.64899974019225
 
-## The attack success rate as a function of the fraction of channels pruned
+### The attack success rate as a function of the fraction of channels pruned
 
 We can observe that a considerable portion of neurons can be removed without affecting the accuracy of classification. The pruning defense seems to progress through three distinct phases. In the initial phase, the pruned neurons, which aren't activated by either clean or backdoored inputs, do not impact the accuracy of either the clean dataset or the success of the backdoor attack. Moving on, the subsequent phase involves eliminating neurons activated solely by the backdoor, thereby reducing the success rate of the backdoor attack while maintaining the accuracy of the clean dataset. The final phase involves pruning neurons responsive to clean inputs, resulting in a decline in accuracy for the clean dataset. At this stage, the defense process stops, and the models are saved with a decrease in accuracy of 2%, 4%, and 10%.
 
@@ -34,7 +34,7 @@ We can observe that a considerable portion of neurons can be removed without aff
 ![output](https://github.com/akanksha6/ML-Cyber-Security/assets/26012142/f0d69408-4338-42fe-866b-0124ff766cf6)
 
 
-## Performance of repaired networks
+### Performance of repaired networks
 
 We use the saved models from the pruning step and evaluate it's accuracy and attack success rate on test set which can be seen down below.
 
@@ -50,7 +50,7 @@ We use the saved models from the pruning step and evaluate it's accuracy and att
 ![repaired_model](https://github.com/akanksha6/ML-Cyber-Security/assets/26012142/946e361f-e355-428c-84d2-2a7b5a786181)
 
 
-## Performance of Goodnet (combined) model
+### Performance of Goodnet (combined) model
 
 We combine the saved models with the bd model and evaluate the new models get the accuracy and attack success rate on test data.
 
