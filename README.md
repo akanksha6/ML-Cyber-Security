@@ -25,12 +25,14 @@ Clean Classification accuracy: 98.64899974019225
 
 We can observe that a considerable portion of neurons can be removed without affecting the accuracy of classification. The pruning defense seems to progress through three distinct phases. In the initial phase, the pruned neurons, which aren't activated by either clean or backdoored inputs, do not impact the accuracy of either the clean dataset or the success of the backdoor attack. Moving on, the subsequent phase involves eliminating neurons activated solely by the backdoor, thereby reducing the success rate of the backdoor attack while maintaining the accuracy of the clean dataset. The final phase involves pruning neurons responsive to clean inputs, resulting in a decline in accuracy for the clean dataset. At this stage, the defense process stops, and the models are saved with a decrease in accuracy of 2%, 4%, and 10%.
 
+
 ![output](https://github.com/akanksha6/ML-Cyber-Security/assets/26012142/f0d69408-4338-42fe-866b-0124ff766cf6)
 
 
 ## Performance of repaired networks
 
 We use the saved models from the pruning step and evaluate it's accuracy and attack success rate on test set which can be seen down below.
+
 
 |        model |  text_acc | attack_rate |
 |-------------:|----------:|------------:|
@@ -45,6 +47,7 @@ We use the saved models from the pruning step and evaluate it's accuracy and att
 ## Performance of Goodnet (combined) model
 
 We combine the saved models with the bd model and evaluate the new models get the accuracy and attack success rate on test data.
+
 
 | G_model | G_text_acc | G_attack_success_rate |
 |--------:|-----------:|----------------------:|
