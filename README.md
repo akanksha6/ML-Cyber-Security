@@ -36,8 +36,7 @@ We can observe that a considerable portion of neurons can be removed without aff
 
 ### Performance of repaired networks
 
-We use the saved models from the pruning step and evaluate it's accuracy and attack success rate on test set which can be seen down below.
-
+In practical terms, the pruning defense demonstrates a beneficial balance between the accuracy of classifying clean inputs and the success of the backdoor attack. It achieves a notable decrease in the latter while minimizing the decline in the former. We use the saved models from the pruning step and evaluate it's accuracy and attack success rate on test set which can be seen down below.
 
 |        model |  text_acc | attack_rate |
 |-------------:|----------:|------------:|
