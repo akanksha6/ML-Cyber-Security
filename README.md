@@ -1,5 +1,10 @@
 # ML-Cyber-Security
 
+Name: Akanksha Dhote
+
+NetID: avd8874
+
+
 ## Data
 
 Validation Data: bd_valid.h5 and valid.h5
@@ -43,6 +48,7 @@ We use the saved models from the pruning step and evaluate it's accuracy and att
 
 
 ![repaired_model](https://github.com/akanksha6/ML-Cyber-Security/assets/26012142/946e361f-e355-428c-84d2-2a7b5a786181)
+
 
 ## Performance of Goodnet (combined) model
 
