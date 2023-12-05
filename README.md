@@ -23,32 +23,37 @@ Clean Classification accuracy: 98.64899974019225
 
 ## The attack success rate as a function of the fraction of channels pruned
 
-![output](https://github.com/akanksha6/ML-Cyber-Security/assets/26012142/5a995881-40bd-4b52-916a-c3fb8cf6bb12)
+We can observe that a considerable portion of neurons can be removed without affecting the accuracy of classification. The pruning defense seems to progress through three distinct phases. In the initial phase, the pruned neurons, which aren't activated by either clean or backdoored inputs, do not impact the accuracy of either the clean dataset or the success of the backdoor attack. Moving on, the subsequent phase involves eliminating neurons activated solely by the backdoor, thereby reducing the success rate of the backdoor attack while maintaining the accuracy of the clean dataset. The final phase involves pruning neurons responsive to clean inputs, resulting in a decline in accuracy for the clean dataset. At this stage, the defense process stops, and the models are saved with a decrease in accuracy of 2%, 4%, and 10%.
+
+![output](https://github.com/akanksha6/ML-Cyber-Security/assets/26012142/f0d69408-4338-42fe-866b-0124ff766cf6)
+
 
 ## Performance of repaired networks
 
-Your repaired networks are created by pruning the max pool layer and save the model when the accuracy drops.
+We use the saved models from the pruning step and evaluate it's accuracy and attack success rate on test set which can be seen down below.
 
-| model        | text_acc  | attack_rate |
-|--------------|-----------|-------------|
-| repaired_2%  | 94.130943 | 100.000000  |
-| repaired_4%  | 94.130943 | 100.000000  |
-| repaired_10% | 74.247857 | 100.000000  |
-| repaired_25% | 64.232268 | 99.992206   |
+|        model |  text_acc | attack_rate |
+|-------------:|----------:|------------:|
+|  2%_repaired | 95.900234 |  100.000000 |
+|  4%_repaired | 92.291504 |   99.984412 |
+| 10%_repaired | 84.544037 |   77.209665 |
+| 25%_repaired | 54.762276 |    6.960249 |
 
-![repaired_model](https://github.com/akanksha6/ML-Cyber-Security/assets/26012142/e909cbd8-16d3-41e1-aeed-7e7e828fee5b)
+
+![repaired_model](https://github.com/akanksha6/ML-Cyber-Security/assets/26012142/946e361f-e355-428c-84d2-2a7b5a786181)
 
 ## Performance of Goodnet (combined) model
 
-We combine the repaired models with the bd model and evaluate the new models
+We combine the saved models with the bd model and evaluate the new models get the accuracy and attack success rate on test data.
 
-| G_model | G_text_acc | G_attack_rate |
-|---------|------------|---------------|
-| G_2%    | 93.959470  | 100.000000    |
-| G_4%    | 93.959470  | 100.000000    |
-| G_10%   | 74.091972  | 100.000000    |
-| G_25%   | 64.123149  | 99.992206     |
+| G_model | G_text_acc | G_attack_success_rate |
+|--------:|-----------:|----------------------:|
+|    G_2% |  95.744349 |            100.000000 |
+|    G_4% |  92.127825 |             99.984412 |
+|   G_10% |  84.333593 |             77.209665 |
+|   G_25% |  54.676539 |              6.960249 |
 
-![goodnet_model](https://github.com/akanksha6/ML-Cyber-Security/assets/26012142/957fcf3c-a1ac-47a2-a3ff-1ad076435ae5)
+
+![goodNet](https://github.com/akanksha6/ML-Cyber-Security/assets/26012142/a67b13fd-9ed4-40b8-9b62-ce1c532be247)
 
 
